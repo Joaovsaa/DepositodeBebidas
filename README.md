@@ -2,11 +2,18 @@
 
 # Descrição
 
-O projeto tem como objetivo gerenciar as vendas de um depósito de bebidas, permitindo ao usuário cadastrar clientes, produtos e vendas. Além disso, o usuário poderá consultar as vendas realizadas e a quantidade de cada produto em estoque.
-Funcionalidades
+Este projeto é um sistema de gerenciamento de um depósito de bebidas. Ele foi desenvolvido utilizando a linguagem de programação Python e o framework Django.
 
-    Cadastro de clientes, produtos e vendas
-    Consulta de vendas e produtos em estoque
+O sistema permite o cadastro de clientes, produtos e vendas. Os produtos podem ser categorizados em bebidas, alimentos, kits e utensílios. Para cada venda, é possível selecionar o cliente e adicionar vários produtos a serem vendidos. O valor total da venda é calculado automaticamente.
+
+Os modelos do projeto são:
+
+    Cliente: armazena o nome, contato e endereço do cliente.
+    Produto: armazena o nome, valor, categoria e quantidade do produto.
+    Venda: armazena o cliente, data e valor total da venda.
+    VendaProduto: modelo de relacionamento que armazena a quantidade de cada produto vendido em cada venda.
+
+O sistema conta com uma interface administrativa, onde é possível visualizar, adicionar, editar e excluir os registros de clientes, produtos e vendas. Além disso, o sistema possui uma página inicial que lista todas as vendas registradas.
 
 # Instalação
 
