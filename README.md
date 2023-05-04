@@ -11,16 +11,16 @@ Para executar o projeto, siga as instruções abaixo:
 
     bash
 
-python3 -m venv myenv
-source myenv/bin/activate
+    python3 -m venv myenv
+    source myenv/bin/activate
 
 Instale as dependências do projeto:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Execute as migrações do banco de dados:
 
-python manage.py migrate
+    python manage.py migrate
 
 Inicie o servidor:
 
