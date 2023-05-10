@@ -73,6 +73,5 @@ Linux/Mac:
 Se você deseja contribuir para este projeto, fique à vontade para abrir uma nova issue ou enviar um pull request com suas melhorias.
 # Licença
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
 
 Este projeto foi desenvolvido por João Sá (joao.vsaa90@gmail.com) e faz parte de um profissional.
