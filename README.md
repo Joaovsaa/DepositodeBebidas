@@ -1,78 +1,78 @@
-# Depósito de Bebidas
+Sistema de Gerenciamento de Depósito de Bebidas
 
-Este projeto é um sistema simples de gerenciamento de depósito de bebidas, desenvolvido com o framework Django. Ele permite o gerenciamento de clientes, produtos e vendas.
-# Instalação
+Este é um sistema de gerenciamento básico para um depósito de bebidas, desenvolvido utilizando Django.
+Funcionalidades
 
-Para executar o projeto, siga as instruções abaixo:
+O sistema oferece as seguintes funcionalidades:
 
-    Clone o repositório para o seu computador: git clone https://github.com/Joaovsaa/DepositodeBebidas.git
-    Certifique-se de que você tem o Python 3 instalado.
-    Crie um ambiente virtual para o projeto e ative-o:
+    Cadastro e gerenciamento de clientes.
+    Cadastro e gerenciamento de produtos.
+    Registro e acompanhamento de vendas.
+    Cálculo automático do total de vendas.
+    Exportação de relatórios de vendas em vários formatos (CSV, XLSX, TSV, ODS).
+    Importação de dados para o sistema a partir de arquivos.
+
+Requisitos
+
+Para executar o sistema localmente, você precisará ter os seguintes requisitos:
+
+    Python 3.7 ou superior
+    Django 3.2.5 ou superior
+    Bibliotecas adicionais listadas no arquivo requirements.txt
+
+Como executar o projeto
+
+    Clone este repositório em sua máquina local:
 
     bash
 
-    python3 -m venv myenv
-    source myenv/bin/activate
+git clone https://github.com/Joaovsaa/DepositodeBebidas.git
+
+Acesse o diretório do projeto:
+
+bash
+
+cd DepositodeBebidas
+
+Crie um ambiente virtual (opcional, mas recomendado):
+
+bash
+
+python -m venv env
+
+Ative o ambiente virtual:
+
+    Windows:
+
+    bash
+
+env\Scripts\activate
+
+Linux/Mac:
+
+bash
+
+    source env/bin/activate
 
 Instale as dependências do projeto:
 
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
 Execute as migrações do banco de dados:
 
-    python manage.py migrate
+python manage.py migrate
 
-Inicie o servidor:
+Inicie o servidor de desenvolvimento:
 
     python manage.py runserver
 
-# Funcionalidades
-# Clientes
+    Acesse o sistema em seu navegador web em http://localhost:8000.
 
-    Adicionar, editar e excluir clientes.
-    Visualizar uma lista de todos os clientes cadastrados.
+Contribuindo
 
-# Produtos
+Se você deseja contribuir para este projeto, fique à vontade para abrir uma nova issue ou enviar um pull request com suas melhorias.
+Licença
 
-    Adicionar, editar e excluir produtos.
-    Visualizar uma lista de todos os produtos cadastrados.
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
 
-# Vendas
-
-    Criar uma nova venda.
-    Adicionar produtos a uma venda.
-    Visualizar as vendas existentes.
-    Visualizar detalhes de uma venda, incluindo o cliente, a data e a lista de produtos.
-    Exportar os dados de uma venda em formato CSV, XLSX, TSV ou ODS.
-
-# Importações
-
-    import_export.admin: adiciona funcionalidades de importação e exportação ao Django Admin.
-    import_export.resources: fornece recursos para importação e exportação de dados.
-    import_export.fields: fornece campos personalizados para importação e exportação de dados.
-    import_export.widgets: fornece widgets personalizados para importação e exportação de dados.
-    import_export.formats: fornece formatos de arquivo suportados para importação e exportação de dados.
-
-# Licença
-
-Este projeto é protegido pela Lei de Direitos Autorais e é de propriedade de João Sá, com e-mail joao.vsaa90@gmail.com. Este projeto é fornecido gratuitamente e pode ser utilizado para fins comerciais e não comerciais, desde que seja feita a atribuição apropriada e a utilização seja realizada em conformidade com os termos e condições estabelecidos nesta licença.
-
-Permissões:
-
-    É permitido o uso comercial deste projeto.
-    É permitido o uso privado e pessoal deste projeto.
-    É permitida a modificação e distribuição deste projeto.
-    É permitida a utilização deste projeto em produtos derivados.
-
-Restrições:
-
-    Este projeto não pode ser vendido sem autorização expressa do proprietário.
-    Este projeto não pode ser utilizado em atividades ilegais ou imorais.
-    Este projeto não pode ser utilizado de forma prejudicial ou perigosa para pessoas ou animais.
-    Este projeto não pode ser utilizado de forma a violar direitos autorais de terceiros.
-
-Atribuição:
-
-Ao utilizar este projeto, é necessário fornecer a atribuição adequada. Isso inclui a adição do nome do autor, João Sá, e o e-mail de contato, joao.vsaa90@gmail.com, em qualquer documentação ou produto que faça uso deste projeto.
-
-Este projeto é fornecido "como está", sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando a garantias de comercialização, adequação a uma finalidade específica e não violação. Em nenhum caso o autor será responsável por qualquer reivindicação, danos ou outras responsabilidades, independentemente do tipo de ação, seja em contrato, delito ou de outra forma, decorrente ou relacionada ao uso deste projeto.
+Este projeto foi desenvolvido por [João Sá] e faz parte de um trabalho acadêmico/profissional.
