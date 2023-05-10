@@ -44,7 +44,7 @@ bash
 
 Windows:
 
-    bash
+   bash
 
     env\Scripts\activate
 
