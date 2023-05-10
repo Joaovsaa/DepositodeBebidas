@@ -1,4 +1,4 @@
-Sistema de Gerenciamento de Depósito de Bebidas
+#Sistema de Gerenciamento de Depósito de Bebidas
 
 Este é um sistema de gerenciamento básico para um depósito de bebidas, desenvolvido utilizando Django.
 Funcionalidades
@@ -12,7 +12,7 @@ O sistema oferece as seguintes funcionalidades:
     Exportação de relatórios de vendas em vários formatos (CSV, XLSX, TSV, ODS).
     Importação de dados para o sistema a partir de arquivos.
 
-Requisitos
+#Requisitos
 
 Para executar o sistema localmente, você precisará ter os seguintes requisitos:
 
@@ -68,10 +68,10 @@ Inicie o servidor de desenvolvimento:
 
     Acesse o sistema em seu navegador web em http://localhost:8000.
 
-Contribuindo
+#Contribuindo
 
 Se você deseja contribuir para este projeto, fique à vontade para abrir uma nova issue ou enviar um pull request com suas melhorias.
-Licença
+#Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
 
