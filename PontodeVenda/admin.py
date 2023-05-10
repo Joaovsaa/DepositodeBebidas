@@ -4,6 +4,8 @@ from import_export.admin import ExportMixin, ImportMixin
 from import_export import resources, fields
 from import_export.widgets import ForeignKeyWidget
 from import_export.formats import base_formats
+from django.utils import timezone
+from pytz import timezone as pytz_timezone
 
 
 class ProdutoInline(admin.TabularInline):
@@ -14,12 +16,12 @@ class ProdutoInline(admin.TabularInline):
 class ProdutoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'valor', 'quantidade', 'categoria')
     list_filter = ('categoria',)
-    search_filter = ('nome',)
+    search_fields = ('nome',)
 
 
 class ClienteAdmin(admin.ModelAdmin):
     list_display = ('nome', 'contato', 'endereco')
-    search_filter = ('nome', 'contato',)
+    search_fields = ('nome', 'contato',)
 
 
 class RelatorioVendaResource(resources.ModelResource):
@@ -38,14 +40,18 @@ class RelatorioVendaResource(resources.ModelResource):
         skip_unchanged = True
         report_skipped = False
 
+    def dehydrate_venda_data(self, venda):
+        venda_data = venda.data.astimezone(pytz_timezone('America/Sao_Paulo'))
+        return venda_data.strftime("%H:%M %d-%m-%Y")
+
     def dehydrate_produtos(self, venda):
-        return ','.join([vp.produto.nome for vp in venda.vendaproduto_set.all()])
+        return '\n'.join([vp.produto.nome for vp in venda.vendaproduto_set.all()])
 
     def dehydrate_quantidades(self, venda):
-        return ','.join([str(vp.quantidade) for vp in venda.vendaproduto_set.all()])
+        return '\n'.join([str(vp.quantidade) for vp in venda.vendaproduto_set.all()])
 
     def dehydrate_valores(self, venda):
-        return ','.join([f'R$ {vp.produto.valor:.2f}' for vp in venda.vendaproduto_set.all()])
+        return '\n'.join([f'R$ {vp.produto.valor:.2f}' for vp in venda.vendaproduto_set.all()])
 
     def dehydrate_total(self, venda):
         total = 0
@@ -65,13 +71,13 @@ class VendaAdmin(ExportMixin, ImportMixin, admin.ModelAdmin):
             total += venda_produto.quantidade * venda_produto.produto.valor
         return f'R$ {total:.2f}'
 
-    # Add export functionality from RelatorioVendaResource
+   
     resource_class = RelatorioVendaResource
     formats = [base_formats.CSV, base_formats.XLSX, base_formats.TSV, base_formats.ODS]
     export_order = ('cliente_nome', 'venda_data', 'produtos', 'quantidades', 'valores', 'total')
+   
 
-
-# Register the models
+# Registrando Models
 admin.site.register(Cliente, ClienteAdmin)
 admin.site.register(Produto, ProdutoAdmin)
 admin.site.register(Venda, VendaAdmin)

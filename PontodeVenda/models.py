@@ -24,6 +24,7 @@ class Produto(models.Model):
     valor = models.DecimalField(max_digits=6, decimal_places=2)
     categoria = models.CharField(max_length=10, choices=CATEGORIA_CHOICES)
     quantidade = models.PositiveIntegerField()
+    descricao = models.TextField(verbose_name="Descrição",max_length = 500, blank = True, null = True)
 
     class Meta:
         verbose_name_plural = "Produtos"
@@ -35,13 +36,13 @@ class Produto(models.Model):
 class Venda(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     data = models.DateTimeField(auto_now_add=True)
-    # Total is a calculated field and does not need to be stored in the database
+    # Total é um Field calculado, não armazenado no BD
 
     class Meta:
         verbose_name_plural = "Vendas"
 
     def __str__(self):
-        return self.data.strftime("%d/%m/%Y")
+        return self.data.strftime("%H: %M %d/%m/%Y")
 
 
 class VendaProduto(models.Model):
